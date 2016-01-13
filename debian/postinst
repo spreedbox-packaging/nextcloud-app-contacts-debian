@@ -1,0 +1,35 @@
+#!/bin/bash -e
+
+export PATH=$PATH:/sbin:/usr/sbin:/bin:/usr/bin
+
+invoke() {
+    if [ -x /usr/sbin/invoke-rc.d ]; then
+        invoke-rc.d $1 $2
+    else
+        /etc/init.d/$1 $2
+    fi
+}
+
+case "$1" in
+    configure)
+        if [ -e "/etc/init.d/php5-fpm" ]; then
+            invoke php5-fpm restart || true
+        fi
+        ;;
+
+    triggered)
+        if [ -e "/etc/init.d/php5-fpm" ]; then
+            invoke php5-fpm restart || true
+        fi
+        ;;
+
+    abort-upgrade|abort-remove|abort-configure)
+        ;;
+
+    *)
+        echo "postinst called with unknown argument '$1'" 1>&2
+        exit 1
+        ;;
+esac
+
+#DEBHELPER#

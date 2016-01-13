@@ -1,0 +1,13 @@
+appinfo/*	usr/lib/owncloud/www/apps/contacts/appinfo
+controller/*	usr/lib/owncloud/www/apps/contacts/controller
+css/*	usr/lib/owncloud/www/apps/contacts/css
+factory/*	usr/lib/owncloud/www/apps/contacts/factory
+formats/*	usr/lib/owncloud/www/apps/contacts/formats
+img/*	usr/lib/owncloud/www/apps/contacts/img
+js/*	usr/lib/owncloud/www/apps/contacts/js
+l10n/*	usr/lib/owncloud/www/apps/contacts/l10n
+lib/*	usr/lib/owncloud/www/apps/contacts/lib
+templates/*	usr/lib/owncloud/www/apps/contacts/templates
+vendor/*	usr/lib/owncloud/www/apps/contacts/vendor
+*.json	usr/lib/owncloud/www/apps/contacts
+*.php	usr/lib/owncloud/www/apps/contacts

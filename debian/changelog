@@ -1,0 +1,5 @@
+owncloud-app-contacts (0.5.0.0) trusty; urgency=low
+
+  * Initial packaged release.
+
+ -- Joachim Bauch <bauch@struktur.de>  Wed, 13 Jan 2016 16:09:20 +0100

@@ -1,0 +1,11 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+
+Files: *
+Copyright: 2011 Jakob Sack <mail@jakobsack.de>,
+ 2012-2014 Thomas Tanghus <thomas@tanghus.net>,
+ 2013-2014 Nicolas Mora <mail@babelouest.org>,
+ 2012 Bart Visscher <bartv@thisnet.nl>,
+ 2012 Michael Gapczynski <mtgap@owncloud.com>,
+ 2012 Bernhard Posselt <dev@bernhard-posselt.com>,
+ 2014 Tobia De Koninck <tobia@ledfan.be>
+License: AGPL-3+

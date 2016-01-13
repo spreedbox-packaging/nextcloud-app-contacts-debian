@@ -1,0 +1,21 @@
+Source: owncloud-app-contacts
+Section: web
+Priority: extra
+Maintainer: struktur AG <opensource@struktur.de>
+Uploaders:
+ Joachim Bauch <bauch@struktur.de>
+Build-Depends:
+ debhelper (>= 9)
+Standards-Version: 3.9.5
+
+Package: owncloud-app-contacts
+Architecture: all
+Depends:
+ ${misc:Depends},
+ owncloud-server
+Description: Owncloud contacts app
+ This package installs the Owncloud contacts app.
+ .
+ The ownCloud Contacts app is similar to other mobile contact applications, but
+ with more functionality. When you first access the Contacts app, a default
+ address book becomes available.
