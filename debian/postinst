@@ -15,7 +15,7 @@ case "$1" in
         if [ -e "/etc/init.d/php5-fpm" ]; then
             invoke php5-fpm restart || true
         fi
-        if [ -x "/usr/bin/occ" ] && [ -e "/etc/owncloud/config.php" ] ; then
+        if [ -x "/usr/bin/occ" ] && [ -s "/etc/owncloud/config.php" ] ; then
             set +e
             /usr/bin/occ upgrade
             rc=$?
