@@ -15,23 +15,25 @@ case "$1" in
         if [ -e "/etc/init.d/php5-fpm" ]; then
             invoke php5-fpm restart || true
         fi
-        if [ -x "/usr/bin/occ" ] && [ -s "/etc/owncloud/config.php" ] ; then
-            set +e
-            /usr/bin/occ upgrade
-            rc=$?
-            set -e
-            if [ "$rc" != "0" ] && [ "$rc" != "3" ]; then
-                echo "****************************************************************"
-                echo "** Automatic update failed, please run 'occ upgrade' manually **"
-                echo "** after the installation to finish upgrading the contacts    **"
-                echo "** ownCloud application!                                      **"
-                echo "****************************************************************"
+        if [ -s "/etc/owncloud/config.php" ]; then
+            if [ -x "/usr/bin/occ" ]; then
+                set +e
+                /usr/bin/occ upgrade
+                rc=$?
+                set -e
+                if [ "$rc" != "0" ] && [ "$rc" != "3" ]; then
+                    echo "****************************************************************"
+                    echo "** Automatic update failed, please run 'occ upgrade' manually **"
+                    echo "** after the installation to finish upgrading the contacts    **"
+                    echo "** ownCloud application!                                      **"
+                    echo "****************************************************************"
+                fi
+            else
+                echo "***************************************************************"
+                echo "** Please run 'occ upgrade' after the installation to finish **"
+                echo "** upgrading the contacts ownCloud application!              **"
+                echo "***************************************************************"
             fi
-        else
-            echo "***************************************************************"
-            echo "** Please run 'occ upgrade' after the installation to finish **"
-            echo "** upgrading the contacts ownCloud application!              **"
-            echo "***************************************************************"
         fi
         ;;
 
