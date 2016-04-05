@@ -1,0 +1,10 @@
+--- a/appinfo/info.xml
++++ b/appinfo/info.xml
+@@ -4,6 +4,7 @@
+ 	<name>Contacts</name>
+ 	<licence>AGPL</licence>
+ 	<author>Jakob Sack,Thomas Tanghus</author>
++	<default_enable/>
+ 	<description>Address book with CardDAV support.</description>
+ 	<standalone/>
+ 	<documentation>
