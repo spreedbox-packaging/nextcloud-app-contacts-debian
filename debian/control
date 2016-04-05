@@ -5,7 +5,8 @@ Maintainer: struktur AG <opensource@struktur.de>
 Uploaders:
  Joachim Bauch <bauch@struktur.de>
 Build-Depends:
- debhelper (>= 9)
+ debhelper (>= 9),
+ quilt
 Standards-Version: 3.9.5
 
 Package: owncloud-app-contacts
