@@ -1,82 +1,53 @@
 <?php
 /**
- * @author Thomas Tanghus
- * @copyright 2013-2014 Thomas Tanghus (thomas@tanghus.net)
+ * ownCloud - contacts
  *
  * This file is licensed under the Affero General Public License version 3 or
- * later.
- * See the COPYING-README file.
+ * later. See the COPYING file.
+ *
+ * @author Hendrik Leppelsack <hendrik@leppelsack.de>
+ * @copyright Hendrik Leppelsack 2015
  */
 
 namespace OCA\Contacts\Controller;
 
-use OCP\AppFramework\Controller;
-use OCP\AppFramework\Http\TemplateResponse;
 use OCP\IRequest;
-use OCA\Contacts\Utils\Properties;
-use OCA\Contacts\ImportManager;
-use OCA\Contacts\Factory\UtilFactory;
+use OCP\AppFramework\Http\TemplateResponse;
+use OCP\AppFramework\Http\DataResponse;
+use OCP\AppFramework\Controller;
 
-/**
- * Controller class for groups/categories
- */
 class PageController extends Controller {
-	/** @var ImportManager */
-	private $importManager;
-	/** @var UtilFactory */
-	private $utilFactory;
 
-	/**
-	 * @param string $AppName
-	 * @param IRequest $request
-	 * @param ImportManager $importManager
-	 * @param UtilFactory $utilFactory
-	 */
-	public function __construct($AppName,
-								IRequest $request,
-								ImportManager $importManager,
-								UtilFactory $utilFactory){
+
+	private $userId;
+
+	public function __construct($AppName, IRequest $request, $UserId){
 		parent::__construct($AppName, $request);
-		$this->importManager = $importManager;
-		$this->utilFactory = $utilFactory;
+		$this->userId = $UserId;
 	}
 
 	/**
+	 * CAUTION: the @Stuff turns off security checks; for this page no admin is
+	 *          required and no CSRF check. If you don't know what CSRF is, read
+	 *          it up in the docs or you might create a security hole. This is
+	 *          basically the only required method to add this exemption, don't
+	 *          add it to any other method if you don't exactly know what it does
+	 *
 	 * @NoAdminRequired
 	 * @NoCSRFRequired
 	 */
 	public function index() {
-		$imppTypes = Properties::getTypesForProperty('IMPP');
-		$adrTypes = Properties::getTypesForProperty('ADR');
-		$phoneTypes = Properties::getTypesForProperty('TEL');
-		$emailTypes = Properties::getTypesForProperty('EMAIL');
-		$cloudTypes = Properties::getTypesForProperty('CLOUD');
-		$ims = Properties::getIMOptions();
-		$imProtocols = array();
-		foreach($ims as $name => $values) {
-			$imProtocols[$name] = $values['displayname'];
-		}
-
-		$maxUploadFilesize = $this->utilFactory->maxUploadFilesize('/');
-
-		\OCP\Util::addScript('placeholder', null);
-		\OCP\Util::addScript('../vendor/blueimp-md5/js/md5', null);
-		\OCP\Util::addScript('jquery.avatar', null);
-		\OCP\Util::addScript('avatar', null);
-
-		$response = new TemplateResponse($this->appName, 'contacts');
-		$response->setParams([
-			'uploadMaxFilesize' => $maxUploadFilesize,
-			'uploadMaxHumanFilesize' => $this->utilFactory->humanFileSize($maxUploadFilesize),
-			'phoneTypes' => $phoneTypes,
-			'emailTypes' => $emailTypes,
-			'cloudTypes' => $cloudTypes,
-			'adrTypes' => $adrTypes,
-			'imppTypes' => $imppTypes,
-			'imProtocols' => $imProtocols,
-			'importManager' => $this->importManager,
-		]);
-
-		return $response;
+		$params = ['user' => $this->userId];
+		return new TemplateResponse('contacts', 'main', $params);  // templates/main.php
 	}
+
+	/**
+	 * Simply method that posts back the payload of the request
+	 * @NoAdminRequired
+	 */
+	public function doEcho($echo) {
+		return new DataResponse(['echo' => $echo]);
+	}
+
+
 }
