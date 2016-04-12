@@ -13,7 +13,7 @@ Package: owncloud-app-contacts
 Architecture: all
 Depends:
  ${misc:Depends},
- owncloud-server
+ owncloud-server (>= 9.0.0)
 Description: Owncloud contacts app
  This package installs the Owncloud contacts app.
  .
