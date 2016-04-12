@@ -1,63 +1,41 @@
 <?php
 /**
- * @author Thomas Tanghus
- * @copyright 2011-2014 Thomas Tanghus (thomas@tanghus.net)
+ * ownCloud - contacts
+ *
  * This file is licensed under the Affero General Public License version 3 or
- * later.
- * See the COPYING-README file.
+ * later. See the COPYING file.
+ *
+ * @author Hendrik Leppelsack <hendrik@leppelsack.de>
+ * @copyright Hendrik Leppelsack 2015
  */
 
-namespace OCA\Contacts;
+namespace OCA\Contacts\AppInfo;
 
-\Sabre\VObject\Component\VCard::$componentMap['VCARD']	= '\OCA\Contacts\VObject\VCard';
-\Sabre\VObject\Component\VCard::$propertyMap['CATEGORIES'] = '\OCA\Contacts\VObject\GroupProperty';
+use OCP\AppFramework\App;
 
-\OC::$server->getNavigationManager()->add(array(
-	'id' => 'contacts',
-	'order' => 10,
-	'href' => \OCP\Util::linkToRoute('contacts_index'),
-	'icon' => \OCP\Util::imagePath( 'contacts', 'contacts.svg' ),
-	'name' => \OCP\Util::getL10N('contacts')->t('Contacts')
-	)
-);
+$app = new App('contacts');
+$container = $app->getContainer();
 
-\OCP\Util::connectHook('OC_User', 'post_createUser', '\OCA\Contacts\Hooks', 'userCreated');
-\OCP\Util::connectHook('OC_User', 'post_deleteUser', '\OCA\Contacts\Hooks', 'userDeleted');
-\OCP\Util::connectHook('OCA\Contacts', 'pre_deleteAddressBook', '\OCA\Contacts\Hooks', 'addressBookDeletion');
-\OCP\Util::connectHook('OCA\Contacts', 'pre_deleteContact', '\OCA\Contacts\Hooks', 'contactDeletion');
-\OCP\Util::connectHook('OCA\Contacts', 'post_createContact', 'OCA\Contacts\Hooks', 'contactAdded');
-\OCP\Util::connectHook('OCA\Contacts', 'post_updateContact', '\OCA\Contacts\Hooks', 'contactUpdated');
-\OCP\Util::connectHook('OCA\Contacts', 'scanCategories', '\OCA\Contacts\Hooks', 'scanCategories');
-\OCP\Util::connectHook('OCA\Contacts', 'indexProperties', '\OCA\Contacts\Hooks', 'indexProperties');
-\OCP\Util::connectHook('OC_Calendar', 'getEvents', 'OCA\Contacts\Hooks', 'getBirthdayEvents');
-\OCP\Util::connectHook('OC_Calendar', 'getSources', 'OCA\Contacts\Hooks', 'getCalenderSources');
+$container->query('OCP\INavigationManager')->add(function () use ($container) {
+	$urlGenerator = $container->query('OCP\IURLGenerator');
+	$l10n = $container->query('OCP\IL10N');
+	return [
+		// the string under which your app will be referenced in owncloud
+		'id' => 'contacts',
 
-$request = \OC::$server->getRequest();
-if (isset($request->server['REQUEST_URI'])) {
-	$url = $request->server['REQUEST_URI'];
+		// sorting weight for the navigation. The higher the number, the higher
+		// will it be listed in the navigation
+		'order' => 10,
 
-	if (preg_match('%index.php/apps/files(/.*)?%', $url)) {
-		\OCP\Util::addscript('contacts', 'loader');
-	}
-}
+		// the route that will be shown on startup
+		'href' => $urlGenerator->linkToRoute('contacts.page.index'),
 
-\OC::$server->getSearch()->registerProvider('OCA\Contacts\Search\Provider', array('apps' => array('contacts')));
-\OCP\Share::registerBackend('contact', 'OCA\Contacts\Share\Contact');
-\OCP\Share::registerBackend('addressbook', 'OCA\Contacts\Share\Addressbook', 'contact');
-//\OCP\App::registerPersonal('contacts','personalsettings');
-\OCP\App::registerAdmin('contacts', 'admin');
+		// the icon that will be shown in the navigation
+		// this file needs to exist in img/
+		'icon' => $urlGenerator->imagePath('contacts', 'app.svg'),
 
-if (\OCP\User::isLoggedIn()) {
-	$cm = \OC::$server->getContactsManager();
-	$cm->register(function() use ($cm) {
-		$userId = \OC::$server->getUserSession()->getUser()->getUID();
-		$app = new App($userId);
-		$addressBooks = $app->getAddressBooksForUser();
-		foreach ($addressBooks as $addressBook)  {
-			if ($addressBook->isActive()) {
-				$cm->registerAddressBook($addressBook->getSearchProvider());
-			}
-		}
-	});
-}
-
+		// the title of your application. This will be used in the
+		// navigation or on the settings page of your app
+		'name' => $l10n->t('Contacts'),
+	];
+});
