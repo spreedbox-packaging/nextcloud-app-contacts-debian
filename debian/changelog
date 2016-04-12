@@ -1,3 +1,11 @@
+owncloud-app-contacts (1.1.0.0-1) trusty; urgency=low
+
+  * Imported Upstream version 1.1.0.0
+  * Updated patch for new version.
+  * Updated list of files/folders to install.
+
+ -- Joachim Bauch <bauch@struktur.de>  Tue, 12 Apr 2016 16:48:55 +0200
+
 owncloud-app-contacts (0.5.0.0-2) trusty; urgency=low
 
   * Run "occ upgrade" from postinst for automatic updates (FS#3326).
