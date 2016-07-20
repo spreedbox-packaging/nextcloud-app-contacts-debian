@@ -1,7 +1,7 @@
-appinfo/*	usr/lib/owncloud/www/apps/contacts/appinfo
-controller/*	usr/lib/owncloud/www/apps/contacts/controller
-css/*	usr/lib/owncloud/www/apps/contacts/css
-img/*	usr/lib/owncloud/www/apps/contacts/img
-js/*	usr/lib/owncloud/www/apps/contacts/js
-l10n/*	usr/lib/owncloud/www/apps/contacts/l10n
-templates/*	usr/lib/owncloud/www/apps/contacts/templates
+appinfo/*	usr/lib/nextcloud/www/apps/contacts/appinfo
+controller/*	usr/lib/nextcloud/www/apps/contacts/controller
+css/*	usr/lib/nextcloud/www/apps/contacts/css
+img/*	usr/lib/nextcloud/www/apps/contacts/img
+js/*	usr/lib/nextcloud/www/apps/contacts/js
+l10n/*	usr/lib/nextcloud/www/apps/contacts/l10n
+templates/*	usr/lib/nextcloud/www/apps/contacts/templates

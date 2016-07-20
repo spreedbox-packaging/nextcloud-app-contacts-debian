@@ -1,4 +1,4 @@
-owncloud-app-contacts (1.1.0.0-1) trusty; urgency=low
+nextcloud-app-contacts (1.1.0.0-1) trusty; urgency=low
 
   * Imported Upstream version 1.1.0.0
   * Updated patch for new version.
