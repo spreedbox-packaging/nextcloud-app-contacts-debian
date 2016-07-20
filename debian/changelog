@@ -1,3 +1,9 @@
+nextcloud-app-contacts (1.3.1.0-3) trusty; urgency=medium
+
+  * Add trigger for shipped
+
+ -- Simon Eisenmann <simon@struktur.de>  Wed, 20 Jul 2016 13:22:47 +0200
+
 nextcloud-app-contacts (1.3.1.0-2) trusty; urgency=medium
 
   * Use correct shipped name
