@@ -1,5 +1,8 @@
 { "translations": {
     "Contacts" : "Kontakty",
+    "Address book name" : "Nazwa książki adresowej",
+    "Import" : "Importuj",
+    "The selected image is too big (max 1MB)" : "Wybrany plik jest zbyt duży (maks. 1 MB)",
     "No contacts in here" : "Nie ma tu żadnych kontaktów",
     "Name" : "Nazwa",
     "Organization" : "Organizacja",
@@ -9,15 +12,21 @@
     "No search result for {query}" : "Brak wyników wyszukiwania dla zapytania {query}",
     "All contacts" : "Wszystkie kontakty",
     "Not grouped" : "Nie zgrupowane",
-    "Post Office Box" : "Skrytka Pocztowa",
-    "Postal Code" : "Kod Pocztowy",
+    "Post office box" : "Skrytka Pocztowa",
+    "Postal code" : "Kod pocztowy",
     "City" : "Miasto",
     "State or province" : "Województwo ",
     "Country" : "Kraj",
     "Address" : "Adres",
     "(new group)" : "Nowa grupa",
+    "Last name" : "Nazwisko",
+    "First name" : "Imię",
+    "Additional names" : "Dodatkowe nazwy",
+    "New contact" : "Nowy kontakt",
     "{addressbook} shared by {owner}" : "Książka {addressbook} udostępniona przez {owner}",
+    "No contacts in file. Only VCard files are allowed." : "Brak kontaktów w pliku. Dozwolone są tylko pliki VCard.",
     "Nickname" : "Nazwa",
+    "Detailed name" : "Szczegółowa nazwa",
     "Notes" : "Notatki",
     "Website" : "Strona www",
     "Home" : "Strona główna",
@@ -34,7 +43,7 @@
     "Fax work" : "Fakx pracowy",
     "Pager" : "Pager",
     "Voice" : "Połączenie głosowe",
-    "Settings" : "Ustawienia",
-    "Import" : "Importuj"
+    "Social network" : "Siec społecznościowa",
+    "Settings" : "Ustawienia"
 },"pluralForm" :"nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);"
 }
