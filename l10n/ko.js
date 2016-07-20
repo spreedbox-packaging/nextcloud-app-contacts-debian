@@ -2,6 +2,8 @@ OC.L10N.register(
     "contacts",
     {
     "Contacts" : "연락처",
+    "Address book name" : "주소록 이름",
+    "Import" : "가져오기",
     "No contacts in here" : "여기에 연락처 없음",
     "Name" : "이름",
     "Organization" : "조직",
@@ -16,6 +18,7 @@ OC.L10N.register(
     "State or province" : "도 및 광역시",
     "Country" : "국가",
     "Address" : "주소",
+    "New contact" : "새 연락처",
     "{addressbook} shared by {owner}" : "{owner} 님이 공유한 {addressbook}",
     "Nickname" : "별명",
     "Notes" : "메모",
@@ -33,7 +36,6 @@ OC.L10N.register(
     "Fax" : "팩스 번호",
     "Pager" : "호출기",
     "Voice" : "음성 번호",
-    "Settings" : "설정",
-    "Import" : "가져오기"
+    "Settings" : "설정"
 },
 "nplurals=1; plural=0;");

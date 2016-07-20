@@ -2,6 +2,8 @@ OC.L10N.register(
     "contacts",
     {
     "Contacts" : "Tengiliðir",
+    "Address book name" : "Heiti nafnaskrár",
+    "Import" : "Flytja inn",
     "No contacts in here" : "Engir tengiliðir hér",
     "Name" : "Nafn",
     "Organization" : "Stofnun/félag",
@@ -11,13 +13,16 @@ OC.L10N.register(
     "No search result for {query}" : "Engar leitarniðurstöður fyrir {query}",
     "All contacts" : "Allir tengiliðir",
     "Not grouped" : "Ekki hópað",
-    "Post Office Box" : "Pósthólf",
-    "Postal Code" : "Póstnúmer",
+    "Postal code" : "Póstnúmer",
     "City" : "Borg",
     "State or province" : "Ríki eða fylki",
     "Country" : "Land",
     "Address" : "Slóð",
     "(new group)" : "(nýr hópur)",
+    "Last name" : "Eftirnafn",
+    "First name" : "Eiginnafn",
+    "Additional names" : "Aukanöfn",
+    "New contact" : "Nýr tengiliður",
     "{addressbook} shared by {owner}" : "{addressbook} deilt af {owner}",
     "Nickname" : "Gælunafn",
     "Notes" : "Minnispunktar",
@@ -37,7 +42,6 @@ OC.L10N.register(
     "Fax work" : "Vinnufax",
     "Pager" : "Símboði",
     "Voice" : "Raddskilaboð",
-    "Settings" : "Stillingar",
-    "Import" : "Flytja inn"
+    "Settings" : "Stillingar"
 },
 "nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);");
