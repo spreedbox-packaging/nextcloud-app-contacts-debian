@@ -14,7 +14,7 @@ invoke() {
 
 mark_shipped() {
     if [ -x "/usr/share/spreedbox-nextcloud/spreedbox-mark-shipped" ]; then
-        /usr/share/spreedbox-nextcloud/spreedbox-mark-shipped calendar
+        /usr/share/spreedbox-nextcloud/spreedbox-mark-shipped contacts
     fi
 }
 
