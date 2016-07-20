@@ -49,6 +49,9 @@ case "$1" in
         ;;
 
     triggered)
+        if [ -e "/usr/lib/nextcloud/www/core/shipped.json" ]; then
+            mark_shipped
+        fi
         if [ -e "/etc/init.d/php5-fpm" ]; then
             invoke php5-fpm restart || true
         fi
