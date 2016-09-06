@@ -1,7 +1,7 @@
 --- a/appinfo/info.xml
 +++ b/appinfo/info.xml
 @@ -19,4 +19,5 @@
-         <owncloud min-version="9.0" max-version="9.1" />
+         <owncloud min-version="9.0" max-version="9.2" />
      </dependencies>
      <ocsid>168708</ocsid>
 +    <default_enable/>
