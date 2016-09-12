@@ -23,9 +23,6 @@ case "$1" in
         if [ -e "/usr/lib/nextcloud/www/core/shipped.json" ]; then
             mark_shipped
         fi
-        if [ -e "/etc/init.d/php5-fpm" ]; then
-            invoke php5-fpm restart || true
-        fi
         if [ -s "/etc/nextcloud/config.php" ]; then
             if [ -x "$OCC" ]; then
                 set +e
@@ -52,9 +49,7 @@ case "$1" in
         if [ -e "/usr/lib/nextcloud/www/core/shipped.json" ]; then
             mark_shipped
         fi
-        if [ -e "/etc/init.d/php5-fpm" ]; then
-            invoke php5-fpm restart || true
-        fi
+        dpkg-trigger spreedbox-restart-php-fpm
         ;;
 
     abort-upgrade|abort-remove|abort-configure)

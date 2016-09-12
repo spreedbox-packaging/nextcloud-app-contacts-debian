@@ -14,7 +14,8 @@ Package: nextcloud-app-contacts
 Architecture: all
 Depends:
  ${misc:Depends},
- nextcloud-server
+ nextcloud-server,
+ spreedbox-php (>= 0.1.1)
 Description: Contacts app for Nextcloud
  This package installs the contacts app for Nextcloud.
  .
