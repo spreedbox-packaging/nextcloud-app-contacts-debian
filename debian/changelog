@@ -1,3 +1,9 @@
+nextcloud-app-contacts (1.4.0.0-2) trusty; urgency=medium
+
+  * Restart php-fpm through trigger (FS#3721).
+
+ -- Joachim Bauch <bauch@struktur.de>  Mon, 12 Sep 2016 15:45:34 +0200
+
 nextcloud-app-contacts (1.4.0.0-1) trusty; urgency=medium
 
   * Imported Upstream version 1.4.0.0
