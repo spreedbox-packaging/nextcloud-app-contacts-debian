@@ -1,8 +1,10 @@
 --- a/appinfo/info.xml
 +++ b/appinfo/info.xml
-@@ -19,4 +19,5 @@
-         <owncloud min-version="9.0" max-version="9.2" />
-     </dependencies>
-     <ocsid>168708</ocsid>
-+    <default_enable/>
- </info>
+@@ -21,6 +21,7 @@
+ 	<bugs>https://github.com/nextcloud/contacts/issues</bugs>
+ 	<repository type="git">https://github.com/nextcloud/contacts.git</repository>
+ 	<screenshot>https://raw.githubusercontent.com/nextcloud/screenshots/master/apps/Contacts/contacts.png</screenshot>
++	<default_enable/>
+ 	<dependencies>
+ 		<owncloud min-version="9.0" max-version="9.2" />
+ 		<nextcloud min-version="9" max-version="11" />
