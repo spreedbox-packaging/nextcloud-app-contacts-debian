@@ -170,7 +170,7 @@ avatar.avatar--missing .avatar-upload {
 /* General details item styles */
 
 detailsitem {
-	display: block;
+	display: inline-block;
 	position: relative;
 }
 
@@ -202,15 +202,16 @@ detailsitem label {
 	text-align: right;
 	opacity: .5;
 	white-space: nowrap;
+	overflow: hidden;
 	overflow-x: hidden;
 	text-overflow: ellipsis;
 	vertical-align: middle;
 }
 
 detailsitem .icon-delete {
-	position: absolute;
-	vertical-align: middle;
-	padding: 16px;
+	position: relative;
+	vertical-align: top;
+	padding: 16px 10px;
 	background-color: transparent;
 	border: none;
 	opacity: .2;
@@ -225,7 +226,7 @@ detailsitem .url-link {
 
 detailsitem.details-item-adr .icon-delete, detailsitem.details-item-n .icon-delete {
 	vertical-align: middle;
-	left: 354px;
+	left: 251px;
 }
 
 detailsitem.details-item-adr {
@@ -314,7 +315,12 @@ input.newAddressBookInput, input.shareeInput, input.addressBookUrl {
 }
 
 ul.addressBookList li[addressbook] > span.addressBookName {
+	width: 105px;
+	overflow: hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
 	padding-left: 7px;
+	display: inline-block;
 }
 
 li.addressBook-share-item span.shareeIdentifier {
@@ -343,6 +349,8 @@ li.addressBook-share-item span.shareeIdentifier {
 	margin: 14px auto; /* to have the same height than a contact*/
 	width: calc(100% - 20px) !important;
 	text-align: left;
+	padding-left: 34px;
+	background-position: 10px center;
 }
 
 
