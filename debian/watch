@@ -1,0 +1,3 @@
+version=2
+opts=filenamemangle=s|.+\/v?(\d+\.\d+\.\d+)/contacts\.tar\.gz|nextcloud-app-contacts-$1\.tar\.gz| \
+  https://github.com/nextcloud/contacts/releases .*/v?(\d+\.\d+\.\d+)/contacts\.tar\.gz
