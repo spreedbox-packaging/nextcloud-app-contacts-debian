@@ -1,3 +1,11 @@
+nextcloud-app-contacts (1.5.2-1) trusty; urgency=medium
+
+  * Added uscan watch file.
+  * Imported Upstream version 1.5.2
+  * Update patch for new upstream version.
+
+ -- Joachim Bauch <bauch@struktur.de>  Wed, 01 Feb 2017 15:12:04 +0100
+
 nextcloud-app-contacts (1.4.0.0-2) trusty; urgency=medium
 
   * Restart php-fpm through trigger (FS#3721).
