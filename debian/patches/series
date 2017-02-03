@@ -1,1 +1,2 @@
 default_enable.patch
+create_missing_addressbook.patch
