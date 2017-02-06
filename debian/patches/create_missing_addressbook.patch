@@ -2,7 +2,7 @@ Description: Fix spinning wheel-of-death if no addressbooks exist for a user.
 Origin:      https://github.com/nextcloud/contacts/pull/91
 --- a/js/public/script.js
 +++ b/js/public/script.js
-@@ -227,6 +227,16 @@
+@@ -251,6 +251,16 @@
  
  	AddressBookService.getAll().then(function(addressBooks) {
  		ctrl.addressBooks = addressBooks;

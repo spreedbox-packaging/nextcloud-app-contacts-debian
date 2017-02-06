@@ -7,4 +7,4 @@
 +	<default_enable/>
  	<dependencies>
  		<owncloud min-version="9.0" max-version="9.2" />
- 		<nextcloud min-version="9" max-version="11" />
+ 		<nextcloud min-version="9" max-version="12" />
