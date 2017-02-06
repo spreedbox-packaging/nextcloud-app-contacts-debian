@@ -1,3 +1,10 @@
+nextcloud-app-contacts (1.5.3-1) trusty; urgency=medium
+
+  * Imported Upstream version 1.5.3
+  * Updated patches for new upstream version.
+
+ -- Joachim Bauch <bauch@struktur.de>  Mon, 06 Feb 2017 08:30:34 +0100
+
 nextcloud-app-contacts (1.5.2-2) trusty; urgency=medium
 
   * Create addressbook if none exists yet (fixes FS#3909).
